@@ -1,1 +1,41 @@
-Hello World Version 1
+<html>
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+    
+    $( function () {
+      
+     
+
+       var getFlavour = localStorage.getItem('favouriteflavour');
+
+        $('#messagePanel').empty().append(getFlavour);
+
+        $('#btnfavouriteflavour').on('click', function () {
+            console.log("saving fav flavour");
+            var favFlavour = $('#tbfavouriteflavour').val()
+            localStorage.setItem('favouriteflavour',favFlavour);
+
+        } )
+
+
+
+    } ); // end jquery load 
+    
+</script>
+
+<style>
+#messagePanel { border: solid 1px red; width: 200px; height: 200px}
+
+</style>
+
+</head>
+<body>
+<div id="messagePanel">This is a message and again</div>
+<input type="text" id="tbfavouriteflavour" />
+<button id="btnfavouriteflavour">Set Flavour</button>
+
+
+</body>
+</html>
